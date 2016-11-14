@@ -75,6 +75,9 @@ app.factory('WebCal', function($http, Calendar, VEvent, TimezoneService, WebCalS
 				iface.fcEventSource.isRendering = false;
 				iface.emit(Calendar.hookFinishedRendering);
 			}).catch(function(reason) {
+				//if (reason.redirect === true) {
+				//	// save new url
+				//}
 				iface.addWarning(reason);
 				console.log(reason);
 				iface.fcEventSource.isRendering = false;
